@@ -137,7 +137,7 @@
         }
 
         .container { max-width: 1150px; margin: 0 auto; padding: 0 20px 60px; }
-20:53
+21:11
 .plans {
             display: flex;
             flex-wrap: wrap;
@@ -223,6 +223,7 @@
             -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") no-repeat center;
         }
 
+        /* Стили для кнопок-ссылок */
         .btn {
             display: block;
             background: transparent;
@@ -238,6 +239,7 @@
             width: 100%;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-align: center;
         }
         
         .btn:hover { 
@@ -255,7 +257,7 @@
         
         /* Модальные окна */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); z-index: 1000; overflow-y: auto; }
-20:53
+21:11
 .modal-content { background: var(--card-bg); margin: 50px auto; padding: 40px; border-radius: 20px; max-width: 800px; position: relative; border: 1px solid var(--primary); box-shadow: 0 0 50px rgba(139, 92, 246, 0.2); }
         .close { position: absolute; top: 20px; right: 25px; font-size: 2rem; cursor: pointer; color: var(--subtext); transition: 0.3s; }
         .close:hover { color: var(--primary); }
@@ -312,7 +314,8 @@
                     <li>Скрытие IP-адреса</li>
                     <li>Безлимитный трафик</li>
                 </ul>
-                <button class="btn" onclick="pay('basic')">Подключить</button>
+                <!-- Кнопка теперь ссылка -->
+                <a href="https://t.me/stimmeVpn?text=Здравствуйте!%20Хочу%20оплатить%20тариф%20'Обычный'" target="_blank" class="btn">Подключить</a>
             </div>
 
             <!-- Тариф 2: Премиум (Дракон) -->
@@ -325,13 +328,14 @@
                 <div class="price" id="price-premium">500 ₽</div>
                 <div class="period" id="period-premium">за 1 месяц</div>
                 <ul class="features">
-                    <li>Доступ к 65 серверам</li>
+21:11
+<li>Доступ к 65 серверам</li>
                     <li>Серверы для стриминга</li>
                     <li>Поддержка в играх (UDP)</li>
-20:53
-<li>Приоритетная поддержка</li>
+                    <li>Приоритетная поддержка</li>
                 </ul>
-                <button class="btn" onclick="pay('premium')">Подключить</button>
+                <!-- Кнопка теперь ссылка -->
+                <a href="https://t.me/stimmeVpn?text=Здравствуйте!%20Хочу%20оплатить%20тариф%20'Премиум'" target="_blank" class="btn">Подключить</a>
             </div>
 
             <!-- Тариф 3: Лучший (Корона) -->
@@ -348,7 +352,8 @@
                     <li>Выделенные IP-адреса</li>
                     <li>Для любых игр и приложений</li>
                 </ul>
-                <button class="btn" onclick="pay('best')">Подключить</button>
+                <!-- Кнопка теперь ссылка -->
+                <a href="https://t.me/stimmeVpn?text=Здравствуйте!%20Хочу%20оплатить%20тариф%20'Лучший'" target="_blank" class="btn">Подключить</a>
             </div>
         </div>
 
@@ -388,19 +393,20 @@
 
     <!-- Модальное окно Политики -->
     <div id="privacy" class="modal">
-        <div class="modal-content">
+21:11
+<div class="modal-content">
             <span class="close" onclick="closeModal('privacy')">&times;</span>
             <h2>Политика конфиденциальности</h2>
             <h3>1. Общие положения</h3>
-20:53
-<p style="color: var(--subtext);">1.1. Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных».</p>
+            <p style="color: var(--subtext);">1.1. Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных».</p>
             <h3>2. Какие данные мы собираем</h3>
             <p style="color: var(--subtext);">2.1. Мы собираем минимальный объем данных: ваш Telegram ID для идентификации и предоставления доступа, а также данные об оплате (транзакции).<br>2.2. Мы <strong>не храним</strong> логи вашего интернет-трафика.</p>
         </div>
     </div>
 
-    <!-- Логика работы -->
+    <!-- Логика работы (только для переключения периодов и окон) -->
     <script>
+        // Оставили только переключение цен
         const prices = {
             1:  { basic: 300,  premium: 500,  best: 800  },
             6:  { basic: 500,  premium: 700,  best: 1000 },
@@ -424,16 +430,16 @@
             
             document.getElementById('price-best').innerText = prices[months].best + ' ₽';
             document.getElementById('period-best').innerText = suffix;
-        }
 
-        function pay(plan) {
-            const planNames = { basic: 'Обычный', premium: 'Премиум', best: 'Лучший' };
-            const periodNames = { 1: '1 месяц', 6: '6 месяцев', 12: '1 год' };
-            const price = prices[currentPeriod][plan];
-            const text = `Здравствуйте! Хочу оплатить тариф "${planNames[plan]}" на срок ${periodNames[currentPeriod]} (${price} руб).`;
-            
-            alert("Сейчас вы будете перенаправлены в Telegram для оформления подписки.");
-            window.location.href = "https://t.me/stimmeVpn?text=" + encodeURIComponent(text);
+            // Обновляем текст в ссылках (чтобы клиент видел актуальную цену)
+            const basicBtn = document.querySelector('.plan:nth-child(1) .btn');
+            basicBtn.href = `https://t.me/stimmeVpn?text=Здравствуйте!%20Хочу%20оплатить%20тариф%20'Обычный'%20на%20срок%20${months}%20мес.%20(${prices[months].basic}%20руб).`;
+
+            const premiumBtn = document.querySelector('.plan:nth-child(2) .btn');
+            premiumBtn.href = `https://t.me/stimmeVpn?text=Здравствуйте!%20Хочу%20оплатить%20тариф%20'Премиум'%20на%20срок%20${months}%20мес.%20(${prices[months].premium}%20руб).`;
+
+            const bestBtn = document.querySelector('.plan:nth-child(3) .btn');
+            bestBtn.href = `https://t.me/stimmeVpn?text=Здравствуйте!%20Хочу%20оплатить%20тариф%20'Лучший'%20на%20срок%20${months}%20мес.%20(${prices[months].best}%20руб).`;
         }
 
         function openModal(id) { document.getElementById(id).style.display = 'block'; document.body.style.overflow = 'hidden'; }
