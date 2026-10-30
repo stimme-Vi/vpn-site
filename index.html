@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPN Сервис — Премиум доступ</title>
+    <title>Stimme VPN — Премиум доступ</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
@@ -74,6 +74,7 @@
             margin: 0 auto;
         }
 
+        /* Кнопка скачивания приложения */
         .download-section {
             margin-top: 30px;
             text-align: center;
@@ -131,10 +132,7 @@
             box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
         }
 
-        .plan.premium {
-            border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
-        }
+        .plan.premium { border-color: var(--primary); box-shadow: 0 0 30px rgba(139, 92, 246, 0.1); }
 
         .plan-icon {
             width: 50px;
@@ -143,10 +141,9 @@
             color: var(--primary);
             filter: drop-shadow(0 0 8px var(--primary-glow));
         }
-21:14
-h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
+
+        h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
         
-        /* Блок с ценами */
         .price-block {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 12px;
@@ -165,27 +162,16 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
         .price-val { font-size: 1.2rem; font-weight: 900; color: var(--primary); }
         
         .features { list-style: none; padding: 0; margin-bottom: 30px; text-align: left; flex-grow: 1; }
-        .features li { 
-            margin-bottom: 15px; 
-            padding-left: 30px; 
-            position: relative; 
-            font-size: 0.95rem; 
-            color: #d4d4d8;
-        }
-        
+        .features li { margin-bottom: 15px; padding-left: 30px; position: relative; font-size: 0.95rem; color: #d4d4d8; }
         .features li::before {
             content: "";
-            position: absolute;
-            left: 0;
-            top: 4px;
-            width: 16px;
-            height: 16px;
+            position: absolute; left: 0; top: 4px; width: 16px; height: 16px;
             background-color: var(--primary);
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") no-repeat center;
             -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") no-repeat center;
         }
 
-        /* Кнопки-ссылки */
+        /* Кнопки, ведущие в бота */
         .btn {
             display: block;
             background: transparent;
@@ -202,20 +188,12 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: center;
+            box-sizing: border-box;
         }
         
-        .btn:hover { 
-            background: var(--primary); 
-            box-shadow: 0 0 20px var(--primary-glow);
-        }
-
-        .plan.premium .btn {
-            background: var(--primary);
-        }
-        .plan.premium .btn:hover {
-            background: #7c3aed;
-            box-shadow: 0 0 30px var(--primary-glow);
-        }
+        .btn:hover { background: var(--primary); box-shadow: 0 0 20px var(--primary-glow); }
+        .plan.premium .btn { background: var(--primary); }
+        .plan.premium .btn:hover { background: #7c3aed; box-shadow: 0 0 30px var(--primary-glow); }
         
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); z-index: 1000; overflow-y: auto; }
         .modal-content { background: var(--card-bg); margin: 50px auto; padding: 40px; border-radius: 20px; max-width: 800px; position: relative; border: 1px solid var(--primary); box-shadow: 0 0 50px rgba(139, 92, 246, 0.2); }
@@ -237,12 +215,12 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
         <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
         </svg>
-        <h1>Безопасный <span>VPN</span></h1>
-21:14
-<p class="subtitle">Скрывайте свой IP, обходите блокировки и играйте без лагов. Премиум-скорость без компромиссов.</p>
+        <h1>Stimme <span>VPN</span></h1>
+        <p class="subtitle">Скрывайте свой IP, обходите блокировки и играйте без лагов. Премиум-скорость без компромиссов.</p>
         
+        <!-- Кнопка скачивания приложения (Ведет в бота) -->
         <div class="download-section">
-            <a href="https://t.me/stimmeVpn" target="_blank" class="download-btn">
+            <a href="https://t.me/StimmeVpn_bot" target="_blank" class="download-btn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                 </svg>
@@ -261,18 +239,9 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
                 <h2>Обычный</h2>
                 
                 <div class="price-block">
-                    <div class="price-row">
-                        <span class="price-term">1 месяц</span>
-                        <span class="price-val">300 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-term">6 месяцев</span>
-                        <span class="price-val">500 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-term">1 год</span>
-                        <span class="price-val">800 ₽</span>
-                    </div>
+                    <div class="price-row"><span class="price-term">1 месяц</span><span class="price-val">300 ₽</span></div>
+                    <div class="price-row"><span class="price-term">6 месяцев</span><span class="price-val">500 ₽</span></div>
+                    <div class="price-row"><span class="price-term">1 год</span><span class="price-val">800 ₽</span></div>
                 </div>
 
                 <ul class="features">
@@ -281,8 +250,9 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
                     <li>Скрытие IP-адреса</li>
                     <li>Безлимитный трафик</li>
                 </ul>
-                <!-- Прямая ссылка без JS -->
-                <a href="https://t.me/stimmeVpn" target="_blank" class="btn">Подключить</a>
+                <!-- Кнопки ведут в бота -->
+                <a href="https://t.me/StimmeVpn_bot" target="_blank" class="btn">Оплатить 1 мес (300 ₽)</a>
+                <a href="https://t.me/StimmeVpn_bot" target="_blank" class="btn" style="margin-top: 10px;">Оплатить 6 мес (500 ₽)</a>
             </div>
 
             <!-- Тариф 2: Премиум -->
@@ -294,18 +264,9 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
                 <h2>Премиум</h2>
                 
                 <div class="price-block">
-                    <div class="price-row">
-                        <span class="price-term">1 месяц</span>
-                        <span class="price-val">500 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-term">6 месяцев</span>
-                        <span class="price-val">700 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-term">1 год</span>
-                        <span class="price-val">1000 ₽</span>
-                    </div>
+                    <div class="price-row"><span class="price-term">1 месяц</span><span class="price-val">500 ₽</span></div>
+                    <div class="price-row"><span class="price-term">6 месяцев</span><span class="price-val">700 ₽</span></div>
+                    <div class="price-row"><span class="price-term">1 год</span><span class="price-val">1000 ₽</span></div>
                 </div>
 
                 <ul class="features">
@@ -314,30 +275,22 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
                     <li>Поддержка в играх (UDP)</li>
                     <li>Приоритетная поддержка</li>
                 </ul>
-                <a href="https://t.me/stimmeVpn" target="_blank" class="btn">Подключить</a>
+                <!-- Кнопки ведут в бота -->
+                <a href="https://t.me/StimmeVpn_bot" target="_blank" class="btn">Оплатить 1 мес (500 ₽)</a>
+                <a href="https://t.me/StimmeVpn_bot" target="_blank" class="btn" style="margin-top: 10px;">Оплатить 6 мес (700 ₽)</a>
             </div>
 
             <!-- Тариф 3: Лучший -->
             <div class="plan">
                 <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-21:14
-<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 </svg>
                 <h2>Лучший</h2>
                 
                 <div class="price-block">
-                    <div class="price-row">
-                        <span class="price-term">1 месяц</span>
-                        <span class="price-val">800 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-term">6 месяцев</span>
-                        <span class="price-val">1000 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-term">1 год</span>
-                        <span class="price-val">1400 ₽</span>
-                    </div>
+                    <div class="price-row"><span class="price-term">1 месяц</span><span class="price-val">800 ₽</span></div>
+                    <div class="price-row"><span class="price-term">6 месяцев</span><span class="price-val">1000 ₽</span></div>
+                    <div class="price-row"><span class="price-term">1 год</span><span class="price-val">1400 ₽</span></div>
                 </div>
 
                 <ul class="features">
@@ -346,12 +299,14 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
                     <li>Выделенные IP-адреса</li>
                     <li>Для любых игр и приложений</li>
                 </ul>
-                <a href="https://t.me/stimmeVpn" target="_blank" class="btn">Подключить</a>
+                <!-- Кнопки ведут в бота -->
+                <a href="https://t.me/StimmeVpn_bot" target="_blank" class="btn">Оплатить 1 мес (800 ₽)</a>
+                <a href="https://t.me/StimmeVpn_bot" target="_blank" class="btn" style="margin-top: 10px;">Оплатить 6 мес (1000 ₽)</a>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
-            <p style="color: var(--subtext);">Хотите протестировать бесплатно? <a href="https://t.me/stimmeVpn" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 700;">Получите пробный доступ на 3 дня в Telegram</a>.</p>
+            <p style="color: var(--subtext);">Хотите протестировать бесплатно? <a href="https://t.me/StimmeVpn_bot" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 700;">Получите пробный доступ на 3 дня в Telegram-боте</a>.</p>
         </div>
     </div>
 
@@ -359,17 +314,17 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
         <div>
             <a onclick="openModal('offer')">Публичная оферта</a> | 
             <a onclick="openModal('privacy')">Политика конфиденциальности</a> | 
-            <a href="https://t.me/stimmeVpn" target="_blank">Служба поддержки</a>
+            <a href="https://t.me/StimmeVpn_bot" target="_blank">Служба поддержки</a>
         </div>
         
         <div class="req-info">
             <p><strong>Реквизиты:</strong> Плательщик НПД (Самозанятый) Ляшенко Надежда Витальевна<br>
             ИНН: <strong>231134504180</strong><br>
-            Связь: <a href="https://t.me/stimmeVpn" target="_blank" style="margin: 0;">Канал в Telegram</a></p>
+            Связь: <a href="https://t.me/StimmeVpn_bot" target="_blank" style="margin: 0;">Бот в Telegram</a></p>
         </div>
     </footer>
 
-    <!-- Окна оферты и политики -->
+    <!-- Модальные окна -->
     <div id="offer" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('offer')">&times;</span>
@@ -379,8 +334,6 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
             <p style="color: var(--subtext);">1.1. Исполнитель предоставляет Заказчику доступ к серверам для обеспечения безопасного и анонимного подключения к сети Интернет (VPN), а Заказчик оплачивает эти услуги.</p>
             <h3>2. Стоимость и порядок оплаты</h3>
             <p style="color: var(--subtext);">2.1. Стоимость услуг определяется тарифами, размещенными на главной странице сайта.<br>2.2. Оплата производится на условиях 100% предоплаты за расчетный период.<br>2.3. Доступ предоставляется в течение 24 часов после успешной оплаты.</p>
-            <h3>3. Порядок возврата</h3>
-            <p style="color: var(--subtext);">3.1. Возврат денежных средств возможен в течение 24 часов с момента оплаты, если услуга не была фактически использована.<br>3.2. Для возврата необходимо обратиться в службу поддержки.</p>
         </div>
     </div>
 
@@ -389,14 +342,12 @@ h2 { font-size: 1.5rem; margin: 0 0 20px; font-weight: 700; }
             <span class="close" onclick="closeModal('privacy')">&times;</span>
             <h2>Политика конфиденциальности</h2>
             <h3>1. Общие положения</h3>
-21:14
-<p style="color: var(--subtext);">1.1. Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных».</p>
+            <p style="color: var(--subtext);">1.1. Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных».</p>
             <h3>2. Какие данные мы собираем</h3>
             <p style="color: var(--subtext);">2.1. Мы собираем минимальный объем данных: ваш Telegram ID для идентификации и предоставления доступа, а также данные об оплате (транзакции).<br>2.2. Мы <strong>не храним</strong> логи вашего интернет-трафика.</p>
         </div>
     </div>
 
-    <!-- Скрипт оставлен ТОЛЬКО для открытия окон с офертой -->
     <script>
         function openModal(id) { document.getElementById(id).style.display = 'block'; document.body.style.overflow = 'hidden'; }
         function closeModal(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
